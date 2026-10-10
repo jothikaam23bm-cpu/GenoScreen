@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GenoScreen educational prototype for exploring HEXA variant information related to Tay-Sachs disease.">
+  <title>GenoScreen | Preliminary Genetic Screening Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="GenoScreen home">GenoScreen</a>
+      <span class="tagline">Genetic Variant Exploration Prototype</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Biomedical Engineering Project</p>
+      <h1>Explore HEXA Variant Information</h1>
+      <p>
+        GenoScreen is an educational prototype that demonstrates how genetic variant
+        information may be organized for preliminary review. It does not diagnose or
+        rule out Tay-Sachs disease.
+      </p>
+    </section>
+
+    <section class="notice" role="note">
+      <strong>Important:</strong> This demo does not connect to a validated clinical
+      database or run a trained machine-learning model. Do not enter personal,
+      identifiable, or real patient information. Results are for education only.
+    </section>
+
+    <section class="panel">
+      <h2>Variant information form</h2>
+      <p class="muted">Enter a variant description for a demonstration summary.</p>
+      <form id="variant-form">
+        <div class="form-grid">
+          <label>
+            Gene
+            <input id="gene" name="gene" value="HEXA" maxlength="20" required>
+          </label>
+          <label>
+            Variant notation (optional)
+            <input id="variant" name="variant" placeholder="e.g., c.XXXXA>G" maxlength="80">
+          </label>
+          <label>
+            Consequence (optional)
+            <select id="consequence" name="consequence">
+              <option value="">Select if known</option>
+              <option value="missense">Missense</option>
+              <option value="nonsense">Nonsense</option>
+              <option value="frameshift">Frameshift</option>
+              <option value="splice-site">Splice-site</option>
+              <option value="synonymous">Synonymous</option>
+              <option value="other">Other / unknown</option>
+            </select>
+          </label>
+          <label>
+            Source of information (optional)
+            <input id="source" name="source" placeholder="e.g., ClinVar accession" maxlength="100">
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit">Create demo summary</button>
+          <button class="button-secondary" type="reset" id="reset-button">Clear form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel result-panel" id="result-panel" aria-live="polite" hidden>
+      <h2>Educational summary</h2>
+      <div id="result-content"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Project objectives</h2>
+      <ul>
+        <li>Introduce the HEXA gene and its relationship to Tay-Sachs disease.</li>
+        <li>Demonstrate a simple interface for recording variant annotations.</li>
+        <li>Encourage careful interpretation and review by qualified professionals.</li>
+      </ul>
+      <h2>Future improvements</h2>
+      <ul>
+        <li>Connect to a verified variant database and show source citations.</li>
+        <li>Integrate a documented, validated model with reproducible evaluation.</li>
+        <li>Add privacy controls, clinician review, and appropriate validation before any real-world use.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>GenoScreen · Student project prototype · Not for clinical decision-making</p>
+    </div>
+  </footer>
+</body>
+</html>
